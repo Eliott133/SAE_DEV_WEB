@@ -8,26 +8,31 @@
   <body>
 
       <div class="flexContenair">
+        <form class="formulaireContenair" action="checkConnexion.php" method="post">
         <div class="titleDiv">
           <h1>Ravie de vous <span class="spanRevoir">revoir</span> </h1>
         </div>
-        <div class="inputMailContenair">
-          <p>Email</p>
-          <input type="mails" name="mail" placeholder="Votre email" required>
-        </div>
-        <div class="inputMDPContenair">
-          <form class="" action="checkConnexion.php" method="post"></form>
-          <p>Mot de passe</p>
-          <input type="password" name="mdp" placeholder="votre mot de passe" required>
+        <div class="inputAll">
+          <div class="inputMailContenair">
+            <p>Email</p>
+            <input type="mails" name="mail" placeholder="Votre email" required>
+          </div>
+          <div class="inputMDPContenair">
+            <p>Mot de passe</p>
+            <input type="password" name="mdp" placeholder="Votre mot de passe" required>
+          </div>
         </div>
         <div class="flexRowContenair">
-          <input type="checkbox" name="checkbox">
+          <div class="checkboxContenair">
+            <input type="checkbox" name="checkbox">
+            <p>Se souvenir de moi</p>
+          </div>
           <a href="#">Mot de passe oublié</a>
         </div>
         <div class="flexContenairButton">
           <button type="submit" name="Connexion">Acceder à son espace</button>
         </div>
+        </form>
       </div>
-    </form>
   </body>
 </html>
