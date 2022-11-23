@@ -1,7 +1,7 @@
 <?php
 
-include 'Utilitaire/CheckInjectionSQL.php';
-include 'Utilitaire/ConnexionBDD.php';
+include '../Utilitaire/CheckInjectionSQL.php';
+include '../Utilitaire/ConnexionBDD.php';
 
 
 if (isset($_POST['Connexion'])) {
@@ -48,6 +48,6 @@ $temporaireBdd = $value['temporaireConnexion'];
   }
 }
 
-}	
+}
 
  ?>
