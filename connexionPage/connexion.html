@@ -6,10 +6,28 @@
     <link rel="stylesheet" href="css/connexionStyle.css">
   </head>
   <body>
-    <form action="checkConnexion.php" method="post">
-      <input type="text" name="mail" placeholder="email">
-      <input type="password" name="mdp" placeholder="mot de passe">
-      <button type="submit" name="Connexion">connecter</button>
+
+      <div class="flexContenair">
+        <div class="titleDiv">
+          <h1>Ravie de vous <span class="spanRevoir">revoir</span> </h1>
+        </div>
+        <div class="inputMailContenair">
+          <p>Email</p>
+          <input type="mails" name="mail" placeholder="Votre email" required>
+        </div>
+        <div class="inputMDPContenair">
+          <form class="" action="checkConnexion.php" method="post"></form>
+          <p>Mot de passe</p>
+          <input type="password" name="mdp" placeholder="votre mot de passe" required>
+        </div>
+        <div class="flexRowContenair">
+          <input type="checkbox" name="checkbox">
+          <a href="#">Mot de passe oublié</a>
+        </div>
+        <div class="flexContenairButton">
+          <button type="submit" name="Connexion">Acceder à son espace</button>
+        </div>
+      </div>
     </form>
   </body>
 </html>
