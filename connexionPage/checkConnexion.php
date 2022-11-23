@@ -1,53 +1,58 @@
 <?php
 
-include '../Utilitaire/CheckInjectionSQL.php';
-include '../Utilitaire/ConnexionBDD.php';
+
+			include '../Utilitaire/CheckInjectionSQL.php';
+			include '../Utilitaire/ConnexionBDD.php';
 
 
-if (isset($_POST['Connexion'])) {
+	if (isset($_POST['Connexion'])) {
 
-$mail = $_POST['mail'];
-$mdp = $_POST['mdp'];
+		$mail = $_POST['mail'];
+		$mdp = $_POST['mdp'];
 
-$injectionSQL=CheckInjectionSQL($mail);
+		$injectionSQL=CheckInjectionSQL($mail);
 
-if (!$injectionSQL) {
+		if (!$injectionSQL) {
 
-$sql = "SELECT * FROM CONNEXION WHERE mailConnexion ='" . $mail . "' AND MDPConnexion IS NOT NULL;";
-$rs = $bdd->query($sql);
-$lignes = $rs->fetchAll();
+			$sql = "SELECT * FROM CONNEXION WHERE mailConnexion ='" . $mail . "' AND MDPConnexion IS NOT NULL;";
+			$rs = $bdd->query($sql);
+			$lignes = $rs->fetchAll();
+    if (count($lignes) > 0) {
+		foreach($lignes as $key => $value) {
 
-foreach($lignes as $key => $value) {
-
-$mailBdd = $value['mailConnexion'];
-$hashBdd = $value['MDPConnexion'];
-$temporaireBdd = $value['temporaireConnexion'];
-}
-
-
-  if (password_verify($mdp, $hashBdd)) {
-
-    if ($temporaireBdd == 'oui') {
+			$mailBdd = $value['mailConnexion'];
+			$hashBdd = $value['MDPConnexion'];
+			$temporaireBdd = $value['temporaireConnexion'];
+    	}
 
 
-      header('Location: CreationMDP.php?mail='.$mail);
+				if (password_verify($mdp, $hashBdd)) {
+
+					if ($temporaireBdd == 'oui') {
+
+
+						header('Location: CreationMDP.php?mail='.$mail);
 
 
 
-    }else{
+					}else{
 
-      //TODO : redirection vers la page qu'il faut
+						//TODO : redirection vers la page qu'il faut
 
-      echo "<p id='message'>PAGE A DEFINIR</p>";
-    }
+						echo "<p id='message'>PAGE A DEFINIR</p>";
+					}
 
-  }else{
+				}else{
 
-      echo "<p id='message'>MDP incorrecte</p>";
+						echo "<p id='message'>MDP incorrecte</p>";
 
-  }
-}
+				}
+      }else {
+        echo "ya rien";
+      }
+			}
 
-}
+		}
+
 
  ?>
