@@ -4,8 +4,16 @@
     <meta charset="utf-8">
     <title>CONNEXION</title>
     <link rel="stylesheet" href="css/connexionStyle.css">
+    <link rel="stylesheet" href="css/switchToggleStyle.css">
   </head>
   <body>
+
+    <div class="switchToggleContenair">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="sliderRound" id="sliderRound" onclick="onClickSwitchToggle()"></span>
+      </label>
+    </div>
 
       <div class="flexContenair">
         <form class="formulaireContenair" action="checkConnexion.php" method="post">
@@ -27,10 +35,10 @@
             <input type="checkbox" name="checkbox">
             <p>Se souvenir de moi</p>
           </div>
-          <a href="#">Mot de passe oublié</a>
+          <a href="#" class="linkMDP">Mot de passe oublié</a>
         </div>
         <div class="flexContenairButton">
-          <button type="submit" name="Connexion">Acceder à son espace</button>
+          <button type="submit" name="Connexion" class="buttonConnexion">Acceder à son espace</button>
         </div>
         </form>
       </div>
